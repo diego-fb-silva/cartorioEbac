@@ -158,6 +158,7 @@ int main()
 		printf("\t1) - Cadastrar nome\n");
 		printf("\t2) - Pesquisar nome\n");
 		printf("\t3) - Remover nome\n");
+		printf("\t4) - Sair do sistema\n");
 		//fim do menu
 	
 		printf("\n\nOpção:");
@@ -180,6 +181,11 @@ int main()
 			
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigado por utilizar nosso sistema!\n");
+			return 0;
 			break;
 			
 			default:
