@@ -17,6 +17,9 @@ int cadastrar()//função responsável por cadastrar os cliente no banco de dados
 	
 	char arquivo[100];
 	
+	int add = 0; //variável para determinar se o usuário quer inserir um novo cadastro
+	int ciclo=1;
+	
 	//Serão usados qnd houver uma tela de login
 	//char senha[6]; 
 	//char email[100];
@@ -75,8 +78,40 @@ int cadastrar()//função responsável por cadastrar os cliente no banco de dados
 	fclose(file);
 	
 	printf("\n\n");
-	system("pause");
 	
+	for(ciclo=1;ciclo=1;)
+	{
+		system("cls");//limpando tela do prompt
+		setlocale(LC_ALL,"Portuguese");
+		
+		printf("Deseja inserir um novo cadastro?\n");
+		printf("1) - Sim\n");
+		printf("2) - Não\n");
+		
+		printf("\n\nOpção:");
+		scanf("%d",&add);
+		
+		switch(add){
+			case 1:
+				system("cls");
+				cadastrar();
+				break;
+			
+			case 2:
+				system("cls");
+				printf("\n\nRetornando ao menu inicial. . .\n\n");
+				system("pause");
+				main();
+				break;
+				
+			default:
+				system("cls");
+				printf("\n\nOpção indisponível. Tente novamente!\n\n");
+				system("pause");
+				break;	
+
+		}
+	}	
 }
 
 int pesquisar()//Função responsável por retornar na tela as informações do cliente de acordo com o CPF informado. 
@@ -172,26 +207,26 @@ int main()
 		switch(opcao)
 		{
 			case 1:
-			cadastrar();
-			break;
+				cadastrar();
+				break;
 			
 			case 2:
-			pesquisar();
-			break;
+				pesquisar();
+				break;
 			
 			case 3:
-			deletar();
-			break;
+				deletar();
+				break;
 			
 			case 4:
-			printf("Obrigado por utilizar nosso sistema!\n");
-			return 0;
-			break;
+				printf("Obrigado por utilizar nosso sistema!\n");
+				return 0;
+				break;
 			
 			default:
-			printf("---Opção indisponível!---\n\n");
-			system("pause");
-			break;	
+				printf("---Opção indisponível!---\n\n");
+				system("pause");
+				break;	
 		}//fim da seleção no menu
 
 	}
